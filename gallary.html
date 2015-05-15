@@ -1,0 +1,28 @@
+    <br>
+    <div class="col-sm-3">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Image Name..." ng-model="image.name">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-xs-6 col-md-3" ng-repeat="img in images|filter:image">
+          <a href="#" class="thumbnail" ng-click="PopUp(img)" data-toggle="modal" data-target="#myModal">
+            <img src={{img.url}} alt="">
+            <div class="caption" style="text-align: center"><h4>{{img.name}}</h4></div>
+          </a>
+        </div>
+    </div>
+    
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <img src={{PopUpUrl}} class="img-responsive">
+              </div>
+          </div>
+        </div>
+    </div>
